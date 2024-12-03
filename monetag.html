@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,24 +69,36 @@
     </div>
 
     <script>
-        // JavaScript for navigation to the new link
-        const newLink = "https://echonverforrinho.info?pshrr=1125988";
+        // Function to spoof the user agent
+        function changeUserAgent() {
+            const newUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36";
+            Object.defineProperty(navigator, 'userAgent', {
+                value: newUserAgent,
+                writable: false
+            });
+            console.log("User agent changed to:", navigator.userAgent);
+        }
 
-        document.getElementById('offer1').addEventListener('click', function () {
-            window.location.href = newLink;
-        });
+        // Invoke user-agent spoofing on page load
+        changeUserAgent();
 
-        document.getElementById('offer2').addEventListener('click', function () {
-            window.location.href = newLink;
-        });
+        // Redirects for buttons
+        const showAd = () => {
+            // This function will trigger the ad
+            if (typeof show_8588055 === 'function') {
+                show_8588055();
+            } else {
+                console.error("Ad script is not loaded properly.");
+            }
+        };
 
-        document.getElementById('offer3').addEventListener('click', function () {
-            window.location.href = newLink;
-        });
-
-        document.getElementById('offer4').addEventListener('click', function () {
-            window.location.href = newLink;
-        });
+        document.getElementById('offer1').addEventListener('click', showAd);
+        document.getElementById('offer2').addEventListener('click', showAd);
+        document.getElementById('offer3').addEventListener('click', showAd);
+        document.getElementById('offer4').addEventListener('click', showAd);
     </script>
+
+    <!-- Ads Script -->
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8588055' data-sdk='show_8588055'></script>
 </body>
 </html>
